@@ -1,0 +1,147 @@
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* centra verticalmente */
+    background: #0d1b2a;
+    color: white;
+    padding: 40px 60px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* 🔥 necesario */
+    background: #0d1b2a;
+    color: white;
+    padding: 40px 60px;
+}
+
+/* CENTRO ABSOLUTO */
+.header-centro {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* IZQUIERDA */
+.header-izquierda {
+    z-index: 1;
+}
+
+/* DERECHA */
+.header-derecha {
+    z-index: 1;
+}
+
+.header-derecha img {
+    width: 220px;
+}
+
+/* DERECHA */
+.header-derecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGO */
+.header-derecha img {
+    width: 220px;   
+    height: auto;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.titulo-maestria {
+    text-align: left;
+     margin: 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.aplicacion {
+    margin-top: 10px;
+    background: #eef;
+    padding: 10px;
+    border-radius: 5px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* COLORES POR VALIDEZ */
+.valida {
+    border-left: 6px solid green;
+}
+
+.no-valida {
+    border-left: 6px solid red;
+}
+
+/* PROYECTO */
+.proyecto {
+    margin-top: 10px;
+    background: #eef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* GRÁFICAS */
+.graficas {
+    text-align: center;
+}
+
+.graficas img {
+    width: 400px;
+    margin: 10px;
+}
+
+/* VIDEO */
+.video iframe {
+    width: 40%;
+    height: 400px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.video h2 {
+    text-align: center;
+}
+
+.referencias {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.referencias p {
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: justify;
+}

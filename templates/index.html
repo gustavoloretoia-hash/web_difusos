@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Difuso</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <!-- IZQUIERDA -->
+    <div class="header-izquierda">
+        <div class="datos">
+            <p><strong>Maestro:</strong> José Miguel Méndez Alonso</p>
+            <p><strong>Alumno:</strong> Gustavo Armando Loreto Castro</p>
+            <p><strong>Actividad:</strong> Conjuntos Difusos</p>
+        </div>
+    </div>
+
+    <!-- TÍTULO CENTRADO -->
+    <div class="header-centro">
+        <h1>Maestría en Inteligencia Artificial</h1>
+        <h2>Sistemas Difusos Inteligentes</h2>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="header-derecha">
+        <img src="/static/logo.png" alt="Logo">
+    </div>
+
+</header>
+
+<div class="controls">
+<input type="text" id="search" placeholder="Buscar propiedad...">
+<select id="filtro">
+<option value="todas">Todas</option>
+<option value="valida">Válidas</option>
+<option value="no">No válidas</option>
+</select>
+</div>
+
+<div class="cards">
+{% for p in propiedades %}
+<div class="card {{ 'valida' if p.validez == 'Válida' else 'no-valida' }}">
+<h2>{{p.nombre}}</h2>
+<p><strong>Fórmula:</strong> {{p.formula}}</p>
+<p><strong>Validez:</strong> {{p.validez}}</p>
+<p>{{p.descripcion}}</p>
+<p><i>{{p.ejemplo}}</i></p>
+
+<div class="aplicacion">
+<strong>Aplicación:</strong>
+<p>{{p.aplicacion}}</p>
+</div>
+
+</div>
+{% endfor %}
+</div>
+
+<!-- PROYECTO REAL -->
+<section class="proyecto">
+<h2>Aplicación al Proyecto de Investigación</h2>
+
+<p>
+El proyecto titulado:
+<strong>“Desarrollo de un agente basado en modelos de lenguaje para la generación contextual de recomendaciones de hardening mediante análisis automatizado de cumplimiento en controles del Center for Internet Security en servidores Windows y Linux”</strong>,
+requiere el manejo de incertidumbre y evaluación flexible de condiciones.
+</p>
+
+<p>
+En este contexto, los conjuntos difusos permiten:
+</p>
+
+<ul>
+<li>Evaluar niveles de cumplimiento parcial de controles de seguridad.</li>
+<li>Modelar incertidumbre en configuraciones del sistema.</li>
+<li>Generar recomendaciones no binarias (cumple / no cumple).</li>
+<li>Integrar múltiples variables de seguridad mediante reglas difusas.</li>
+<li>Mejorar la interpretación de resultados generados por modelos de lenguaje.</li>
+</ul>
+
+<p>
+Por lo tanto, las propiedades de los conjuntos difusos son fundamentales para estructurar el razonamiento del agente inteligente y mejorar la calidad de las recomendaciones de hardening.
+</p>
+
+</section>
+
+<section class="graficas">
+<h2>Funciones de Membresía</h2>
+<img src="/grafica/gaussiana">
+</section>
+
+
+<section class="video">
+    <h2>Video Explicativo</h2>
+
+    <div class="video-container">
+        <iframe src="https://youtu.be/Dodo9wC0zFI"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+    </div>
+</section>
+<!--
+
+<section class="video">
+    <h2>Video Explicativo</h2>
+
+    <div class="video-container">
+        <video controls>
+            <source src="/static/video.mp4" type="video/mp4">
+            
+        </video>
+    </div>
+</section>
+-->
+<section class="referencias">
+<h2>Referencias (APA 7)</h2>
+
+<p>
+Zadeh, L. A. (1965). Conjuntos difusos. <em>Information and Control, 8</em>(3), 338–353.
+</p>
+
+<p>
+Klir, G. J., y Folger, T. A. (1988). <em>Conjuntos difusos, incertidumbre e información</em>. Prentice Hall.
+</p>
+
+<p>
+Zimmermann, H. J. (1985). <em>Teoría de conjuntos difusos y sus aplicaciones</em>. Kluwer Academic.
+</p>
+
+</section>
+
+<script>
+const search = document.getElementById("search");
+const filtro = document.getElementById("filtro");
+const cards = document.querySelectorAll(".card");
+
+function filtrar(){
+    const texto = search.value.toLowerCase();
+    const tipo = filtro.value;
+
+    cards.forEach(card=>{
+        const contenido = card.innerText.toLowerCase();
+        const esValida = card.classList.contains("valida");
+
+        let mostrar = contenido.includes(texto);
+
+        if(tipo==="valida") mostrar = mostrar && esValida;
+        if(tipo==="no") mostrar = mostrar && !esValida;
+
+        card.style.display = mostrar ? "block" : "none";
+    });
+}
+
+search.addEventListener("input", filtrar);
+filtro.addEventListener("change", filtrar);
+</script>
+
+</body>
+</html>
