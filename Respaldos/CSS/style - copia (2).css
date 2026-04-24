@@ -150,64 +150,41 @@ body {
     margin-top: 15px;
 }
 
+/* CONTENEDOR MÁS LIMPIO */
 .proyecto {
-    border-left: 6px solid #0d1b2a;
-}
-
-/* OBJETIVO GENERAL DESTACADO */
-.objetivo-general-box {
-    background: #0d1b2a;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-}
-
-/* GRID PARA OBJETIVOS */
-.objetivos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-/* TARJETAS */
-.objetivo-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    border-left: 5px solid #0d1b2a;
-    transition: transform 0.2s;
-}
-
-.objetivo-card:hover {
-    transform: scale(1.03);
-}
-
-.objetivo-card p {
-    text-align: justify;
-}
-
-.objetivo-card {
-    display: flex;
-    align-items: center;
-}
-.referencias {
-    margin-top: 40px;
-    padding: 20px;
+    margin: 30px auto;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    background: #eef;
+    padding: 25px 30px;
+    border-radius: 10px;
+    line-height: 1.6;
 }
 
-.referencias h2 {
+/* TÍTULO PRINCIPAL */
+.proyecto h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.referencias p {
+/* SUBTÍTULOS */
+.proyecto h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #0d1b2a;
+}
+
+/* TEXTO */
+.proyecto p {
     text-align: justify;
-    text-indent: -1.5em;
-    margin-left: 1.5em;
     margin-bottom: 15px;
-    line-height: 1.6;
+}
+
+/* LISTA */
+.proyecto ul {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+.proyecto li {
+    margin-bottom: 10px;
 }

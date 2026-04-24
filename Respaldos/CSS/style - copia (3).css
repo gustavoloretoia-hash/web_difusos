@@ -191,23 +191,3 @@ body {
     display: flex;
     align-items: center;
 }
-.referencias {
-    margin-top: 40px;
-    padding: 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.referencias h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.referencias p {
-    text-align: justify;
-    text-indent: -1.5em;
-    margin-left: 1.5em;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
